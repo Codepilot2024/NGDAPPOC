@@ -9,8 +9,8 @@ sources:
           - name: RAW_CUSTOMER
             description: customer information
             freshness: # make this a little more strict
-              warn_after: {count: 1, period: minute }
-              error_after: {count: 2, period: minute }
+              warn_after: {count: 1, period: hour }
+              error_after: {count: 2, period: hour }
           - name: RAW_ACCOUNTS
             description: Account information
             freshness: # make this a little more strict
