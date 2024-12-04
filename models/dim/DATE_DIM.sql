@@ -1,6 +1,8 @@
 {{ config(
 	    materialized="table",
-	    schema='DIM'
+	    schema='DIM',
+        PRE_HOOK='TRUNCATE TABLE DATE_DIM'
+
 	           ) }}
 select * from (
 SELECT 

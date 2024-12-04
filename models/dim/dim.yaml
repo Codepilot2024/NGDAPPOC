@@ -4,6 +4,9 @@ models:
   - name: DATE_DIM
     access: public
     description: ""
+    config:
+      contract:
+        enforced: true
     columns:
       - name: dateid
         data_type: number

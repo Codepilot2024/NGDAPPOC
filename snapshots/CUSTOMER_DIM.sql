@@ -2,7 +2,7 @@
 {{
  config(
  target_schema= 'DIM',
- unique_key=['CUST_ID','CUSTOMER_NAME'],
+ unique_key=['SUP_KEY'],
  strategy='check',
  check_cols=['hash_val'],
  invalidate_hard_deletes=True

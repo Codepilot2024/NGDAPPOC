@@ -2,7 +2,7 @@
 {{
  config(
  target_schema= 'DIM',
- unique_key=['ACC_ID','CUSTOMERID','ACCOUNT_TYPE','BRANCH_ID'],
+ unique_key=['SUP_KEY'],
  strategy='check',
  check_cols=['hash_val'],
  invalidate_hard_deletes=True
