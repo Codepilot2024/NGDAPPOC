@@ -39,18 +39,3 @@ models:
       - name: isweekend
         data_type: boolean
         description: ""
-    # Declare the versions, and highlight the diffs
-    versions:
-    
-      - v: 1
-        deprecation_date: 2024-12-04 13:05:00.00+00:00
-        columns:
-          # This means: use the 'columns' list from above, but exclude is_return
-          - include: all
-            exclude: [date_dt]
-        
-      - v: 2
-        columns:
-          # This means: use the 'columns' list from above, but exclude status
-          - include: all
-            exclude: [dayofweek]
