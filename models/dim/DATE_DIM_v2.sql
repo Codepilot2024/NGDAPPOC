@@ -1,6 +1,7 @@
 {{ config(
 	    materialized="table",
-	    schema='DIM'
+	    schema='DIM',
+        PRE_HOOK='TRUNCATE TABLE DATE_DIM'
 	           ) }}
 select * from (
 SELECT 
@@ -11,6 +12,7 @@ SELECT
     EXTRACT(QUARTER FROM Date) AS Quarter,
     EXTRACT(YEAR FROM Date) AS Year,
     EXTRACT(DOW FROM Date) AS DayOfWeek,
+    to_date(date::timestamp) as date_dt,
     CASE WHEN EXTRACT(DOW FROM Date) IN (0, 6) THEN TRUE ELSE FALSE END AS IsWeekend
     FROM
     (   SELECT 
