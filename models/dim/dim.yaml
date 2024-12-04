@@ -1,0 +1,38 @@
+version: 2
+
+models:
+  - name: DATE_DIM
+    access: public
+    description: ""
+    columns:
+      - name: dateid
+        data_type: number
+        description: ""
+
+      - name: date
+        data_type: timestamp_ntz
+        description: ""
+
+      - name: day
+        data_type: number
+        description: ""
+
+      - name: month
+        data_type: number
+        description: ""
+
+      - name: quarter
+        data_type: number
+        description: ""
+
+      - name: year
+        data_type: number
+        description: ""
+
+      - name: dayofweek
+        data_type: number
+        description: ""
+
+      - name: isweekend
+        data_type: boolean
+        description: ""
