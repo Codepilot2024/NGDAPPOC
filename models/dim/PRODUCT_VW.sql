@@ -10,6 +10,7 @@ SELECT
  category,
  price,
  stock_quantity,
- SHA1_HEX(product_id||product_name||category||price||stock_quantity) AS HASH_VAL 
+ SHA1_HEX(product_id||product_name||category||price||stock_quantity) AS HASH_VAL,
+ LOAD_DT 
  FROM
  {{ref('RAW_PRODUCT')}}
