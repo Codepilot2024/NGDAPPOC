@@ -39,3 +39,39 @@ models:
       - name: isweekend
         data_type: boolean
         description: ""
+
+  - name: PRODUCT_VW
+    description: "PRPD"
+    access: public
+    columns:
+      - name: sup_key
+        data_type: varchar
+        description: ""
+
+      - name: product_id
+        data_type: number
+        description: ""
+
+      - name: product_name
+        data_type: varchar
+        description: ""
+
+      - name: category
+        data_type: varchar
+        description: ""
+
+      - name: price
+        data_type: number
+        description: ""
+
+      - name: stock_quantity
+        data_type: number
+        description: ""
+
+      - name: hash_val
+        data_type: varchar
+        description: ""
+
+      - name: load_dt
+        data_type: timestamp_ltz
+        description: ""

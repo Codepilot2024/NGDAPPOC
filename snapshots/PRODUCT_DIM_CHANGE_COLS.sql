@@ -1,4 +1,4 @@
-{% snapshot PRODUCT_DIM %}
+{% snapshot PRODUCT_DIM_CHANGE_COLS %}
 {{
  config(
  target_schema= 'DIM',
