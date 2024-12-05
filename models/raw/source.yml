@@ -21,3 +21,8 @@ sources:
             freshness: # make this a little more strict
               warn_after: {count: 1, period: minute }
               error_after: {count: 2, period: minute }
+          - name: RAW_PRODUCT
+            description: Product details
+            freshness: # make this a little more strict
+              warn_after: {count: 10, period: minute }
+              error_after: {count: 20, period: minute }
