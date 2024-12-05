@@ -1,6 +1,6 @@
 version: 2
 
-models:
+snapshots:
   - name: ACCOUNT_DIM
     access: public
     description: "account dimension"
