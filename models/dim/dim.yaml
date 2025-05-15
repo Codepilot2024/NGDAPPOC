@@ -1,0 +1,77 @@
+version: 2
+
+models:
+  - name: DATE_DIM
+    access: public
+    description: ""
+    config:
+      contract:
+        enforced: true
+    columns:
+      - name: dateid
+        data_type: number
+        description: ""
+
+      - name: date
+        data_type: timestamp_ntz
+        description: ""
+
+      - name: day
+        data_type: number
+        description: ""
+
+      - name: month
+        data_type: number
+        description: ""
+
+      - name: quarter
+        data_type: number
+        description: ""
+
+      - name: year
+        data_type: number
+        description: ""
+
+      - name: dayofweek
+        data_type: number
+        description: ""
+
+      - name: isweekend
+        data_type: boolean
+        description: ""
+
+  - name: PRODUCT_VW
+    description: "PRPD"
+    access: public
+    columns:
+      - name: sup_key
+        data_type: varchar
+        description: ""
+
+      - name: product_id
+        data_type: number
+        description: ""
+
+      - name: product_name
+        data_type: varchar
+        description: ""
+
+      - name: category
+        data_type: varchar
+        description: ""
+
+      - name: price
+        data_type: number
+        description: ""
+
+      - name: stock_quantity
+        data_type: number
+        description: ""
+
+      - name: hash_val
+        data_type: varchar
+        description: ""
+
+      - name: load_dt
+        data_type: timestamp_ltz
+        description: ""

@@ -1,0 +1,62 @@
+version: 2
+
+snapshots:
+  - name: ACCOUNT_DIM
+    description: "account dimension"
+    config:
+      contract:
+        enforced: true
+    columns:
+      - name: accountid
+        data_type: number
+        description: ""
+
+      - name: acc_id
+        data_type: number
+        description: ""
+
+      - name: customerid
+        data_type: number
+        description: ""
+
+      - name: balance
+        data_type: number
+        description: ""
+
+      - name: account_type
+        data_type: varchar
+        description: ""
+
+      - name: branch_id
+        data_type: number
+        description: ""
+
+      - name: branch_name
+        data_type: varchar
+        description: ""
+
+      - name: hash_val
+        data_type: varchar
+        description: ""
+
+      - name: dbt_scd_id
+        data_type: varchar
+        description: ""
+
+      - name: dbt_updated_at
+        data_type: timestamp_ntz
+        description: ""
+
+      - name: dbt_valid_from
+        data_type: timestamp_ntz
+        description: ""
+
+      - name: dbt_valid_to
+        data_type: timestamp_ntz
+        description: ""
+  - name: PRODUCT_DIM_CHANGE_COLS
+    description: "PRODUCT_DIM_CHANGE_COLS"
+    config:
+       snapshot_meta_column_names:
+        dbt_valid_from: 'VLD_FROM_TMS'
+        dbt_valid_to: 'VLD_TO_TMS'

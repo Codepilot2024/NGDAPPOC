@@ -1,0 +1,4 @@
+models:
+  - name: RAW_TRANSACTION
+    config:
+      event_time: TRANSACTION_DATE
