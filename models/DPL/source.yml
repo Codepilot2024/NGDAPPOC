@@ -1,0 +1,15 @@
+version: 1
+
+sources:
+  - name: pms_stg
+    description: This is a replica of the Postgres database used by our app
+    schema: "{{ var('PS_DB_IS_ORA_SCM_v0001.$ORA_SCM_STG') }}"  
+    tables:
+      - name: PMS_IS_STG_IP_TCV_FULL_CUD_V
+        description: test case Full Cud Version.
+  - name: pms_ctl
+    description : ctl
+    schema: "{{ var('PS_DB_IS_ORA_SCM_v0001.$ORA_SCM_CTL') }}"
+    tables:
+      - name: CTL_SRC_INSTN_LOG
+        description: ctl table
