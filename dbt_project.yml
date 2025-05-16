@@ -42,4 +42,9 @@ models:
     # Applies to all files under models/example/
     example:
       +materialized: table
-
+vars:
+  pm_pcs_period: '2025-04-01 00:00:00'
+  pm_pcs_id: 10
+  PS_DB_IS_ORA_SCM_v0001.$ORA_SCM_STG: 'IS_PMS_STG_OWNER'
+  PS_DB_IS_ORA_SCM_v0001.$ORA_SCM_CTL: 'IS_PMS_CTL_OWNER'
+  PS_DB_IS_ORA_SCM_v0001.$ORA_SCM_SAC: 'IS_PMS_SAC_OWNER'
