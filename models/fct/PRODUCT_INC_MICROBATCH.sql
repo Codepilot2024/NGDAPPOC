@@ -24,4 +24,4 @@ SUP_KEY,
         ) as dbt_scd_id,
     coalesce(nullif(to_timestamp_ntz(convert_timezone('UTC', current_timestamp())), to_timestamp_ntz(convert_timezone('UTC', current_timestamp()))), null) as VLD_TO_TMS
 FROM
-{{ ref('PRODUCT_VW')}} 
+{{ ref('RAW_PRODUCT')}} 
