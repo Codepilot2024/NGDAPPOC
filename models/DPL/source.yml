@@ -13,3 +13,15 @@ sources:
     tables:
       - name: CTL_SRC_INSTN_LOG
         description: ctl table
+  - name: pms_cds
+    description: Key tables
+    dataset: "{{ var('PS_DB_IS_ORA_SCM_v0001.$ORA_SCM_CDS') }}"  
+    tables:
+      - name: PMS_IS_CDS_IP_K
+        description: IP_K key table
+      - name: PMS_IS_CDS_CL_K
+        description: CL_K key table
+      - name: PMS_IS_CDS_SS_DPL_EV_TCI_DELTA_C_I
+        description: Immutable table
+      - name: PMS_IS_CDS_SS_DPL_IP_TCV_FULL_CUD_V
+        description: Full CUD Version table
