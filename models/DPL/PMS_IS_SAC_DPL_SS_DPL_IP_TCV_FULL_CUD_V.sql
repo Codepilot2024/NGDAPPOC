@@ -1,8 +1,7 @@
 {{ config(
     schema=var('PS_DB_IS_ORA_SCM_v0001.$ORA_SCM_SAC') ,
     materialized='incremental',
-    pre_hook='CALL {{ var("PS_DB_IS_ORA_SCM_v0001.$ORA_SCM_SAC") }}.proc_truncate_table(\'{{ var("PS_DB_IS_ORA_SCM_v0001.$ORA_SCM_SAC") }}.PMS_IS_SAC_DPL_SS_DPL_IP_TCV_FULL_CUD_V\');'
-
+    pre_hook='CALL {{ var("PS_DB_IS_ORA_SCM_v0001.$ORA_SCM_SAC") }}.proc_truncate_table(\'{{ var("PS_DB_IS_ORA_SCM_v0001.$ORA_SCM_SAC") }}\',\'{{this}}\');'
 ) }}
 
    --- 
