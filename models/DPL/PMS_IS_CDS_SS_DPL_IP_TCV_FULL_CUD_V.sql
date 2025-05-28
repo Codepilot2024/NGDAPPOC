@@ -38,7 +38,7 @@
 
 SELECT              DISTINCT
                     IP_ID AS IP_ID,    
-                    IP_TCV_FULL_CUD_V_ID,
+                    generate_uuid() as IP_TCV_FULL_CUD_V_ID,
                     IP_SUP_KEY AS IP_SUP_KEY,
                     MSTR_SRC_STM_CD AS MSTR_SRC_STM_CD,
                     ENT_TP_CD AS ENT_TP_CD,
