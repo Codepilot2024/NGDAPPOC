@@ -143,10 +143,11 @@ SOURCE AS (
     IFNULL(TC_SPLIT_ATTR_2_EDC,'') AS CDS_TC_SPLIT_ATTR_2_EDC,
     TC_CONVERGE_ATTR_EDC AS CDS_TC_CONVERGE_ATTR_EDC
   FROM
-    {{ source('pms_cds','PMS_IS_CDS_SS_DPL_IP_TCV_FULL_CUD_V') }} BALOP_5
-  WHERE
+    {{ source('pms_cds','PMS_IS_CDS_SS_DPL_IP_TCV_FULL_CUD_V_AR_VW') }} BALOP_5
+  
   ----filter active records---------
-    VLD_TO_TMS = CAST('9999-12-31 00:00:00' AS DATETIME) )
+    --WHERE VLD_TO_TMS = CAST('9999-12-31 00:00:00' AS DATETIME) 
+    )
 
 --------------delta detection----------------------------
 SELECT

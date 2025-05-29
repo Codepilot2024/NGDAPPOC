@@ -2,8 +2,8 @@
     {% set results = run_query(lookup_query) %}
     
     {% if results and results.columns[0].values() | length > 0 %}
-        {% set last_processing_tms = results.columns[0].values()[0] %}
-        {% set next_processing_tms = results.columns[1].values()[0] %}
+        --{% set last_processing_tms = results.columns[0].values()[0] %}
+        {% set next_processing_tms = results.columns[0].values()[0] %}
 
         {% set update_sql %}
             UPDATE CCL_CAS_OWNER.FLOW_STATUS

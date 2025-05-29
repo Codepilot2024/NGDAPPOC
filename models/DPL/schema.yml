@@ -1,0 +1,143 @@
+version: 1
+
+models:
+
+
+- name: PMS_IS_SAC_DPL_SS_DPL_IP_TCV_FULL_CUD_V
+  columns:
+  - name: IP_SUP_KEY
+    tests:
+    - unique
+  - name: MSTR_SRC_STM_KEY
+    tests:
+    - unique
+  - name: TC_OBJ_INSTANCE_KEY_1
+    tests:
+    - unique
+  - name: TC_FK_CL_1_KEY_2
+    tests:
+    - unique
+  - name: TC_FK_CL_2_KEY
+    tests:
+    - unique
+  - name: TC_FK_EV_I_KEY
+    tests:
+    - unique
+  - name: TC_FK_1_CL_SUP_KEY
+    tests:
+    - unique
+  - name: TC_FK_2_CL_SUP_KEY
+    tests:
+    - unique
+  - name: TC_FK_EV_I_SUP_KEY
+    tests:
+    - unique
+  - name: MSTR_SRC_STM_CD
+    tests:
+    - accepted_values:
+        values:
+        - DPL
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 3
+        row_condition: 'MSTR_SRC_STM_CD is not null'
+  - name: ENT_TP_CD
+    tests:
+    - accepted_values:
+        values:
+        - IP_TCV_FULL_CUD
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 15
+        row_condition: 'ENT_TP_CD is not null'
+  - name: SRC_STM_CD
+    tests:
+    - accepted_values:
+        values:
+        - DPL
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 3
+        row_condition: 'SRC_STM_CD is not null'
+  - name: DEL_IN_SRC_STM_IND
+    tests:
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 1
+        row_condition: 'DEL_IN_SRC_STM_IND is not null'
+- name: PMS_IS_CDS_IP_K
+  columns:
+  - name: IP_ID
+    tests:
+    - unique
+    - not_null
+  - name: IP_SUP_KEY
+    tests:
+    - unique
+    - not_null
+  - name: MSTR_SRC_STM_KEY
+    tests:
+    - unique
+    - not_null
+  - name: MSTR_SRC_STM_CD
+    tests:
+    - accepted_values:
+        values:
+        - DPL
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 3
+        row_condition: '`MSTR_SRC_STM_CD` is not null'
+  - name: ENT_TP_CD
+    tests:
+    - accepted_values:
+        values:
+        - IP_TCV_FULL_CUD
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 15
+        row_condition: '`ENT_TP_CD` is not null'
+  - name: SRC_STM_CD
+    tests:
+    - accepted_values:
+        values:
+        - DPL
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 3
+        row_condition: '`SRC_STM_CD` is not null'
+- name: PMS_IS_SAC_SS_DPL_IP_TCV_FULL_CUD_V_D
+  columns:
+  - name: IP_TCV_FULL_CUD_V_ID
+    tests:
+    - unique
+  - name: IP_ID
+    tests:
+    - not_null
+  - name: IP_SUP_KEY
+    tests:
+    - not_null
+  - name: MSTR_SRC_STM_CD
+    tests:
+    - not_null
+  - name: HASH_VAL
+    tests:
+    - unique
+    - not_null
+
+- name: PMS_IS_CDS_SS_DPL_IP_TCV_FULL_CUD_V
+  columns:
+  - name: IP_TCV_FULL_CUD_V_ID
+    tests:
+    - unique
+    - not_null
+  - name: IP_ID
+    tests:
+    - not_null
+  - name: IP_SUP_KEY
+    tests:
+    - not_null
+  - name: MSTR_SRC_STM_KEY
+    tests:
+    - not_null
+  - name: VLD_FROM_TMS
+    tests:
+      - vldfrom_gt_vldto:
+          column_2: VLD_TO_TMS
+
+
+
+
