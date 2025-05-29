@@ -23,5 +23,5 @@ sources:
         description: CL_K key table
       - name: PMS_IS_CDS_SS_DPL_EV_TCI_DELTA_C_I
         description: Immutable table
-      - name: PMS_IS_CDS_SS_DPL_IP_TCV_FULL_CUD_V
+      - name: PMS_IS_CDS_SS_DPL_IP_TCV_FULL_CUD_V_AR_VW
         description: Full CUD Version table
