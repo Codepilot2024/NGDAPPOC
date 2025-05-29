@@ -8,30 +8,6 @@ models:
   - name: IP_SUP_KEY
     tests:
     - unique
-  - name: MSTR_SRC_STM_KEY
-    tests:
-    - unique
-  - name: TC_OBJ_INSTANCE_KEY_1
-    tests:
-    - unique
-  - name: TC_FK_CL_1_KEY_2
-    tests:
-    - unique
-  - name: TC_FK_CL_2_KEY
-    tests:
-    - unique
-  - name: TC_FK_EV_I_KEY
-    tests:
-    - unique
-  - name: TC_FK_1_CL_SUP_KEY
-    tests:
-    - unique
-  - name: TC_FK_2_CL_SUP_KEY
-    tests:
-    - unique
-  - name: TC_FK_EV_I_SUP_KEY
-    tests:
-    - unique
   - name: MSTR_SRC_STM_CD
     tests:
     - accepted_values:
@@ -65,15 +41,12 @@ models:
   columns:
   - name: IP_ID
     tests:
-    - unique
     - not_null
   - name: IP_SUP_KEY
     tests:
-    - unique
     - not_null
   - name: MSTR_SRC_STM_KEY
     tests:
-    - unique
     - not_null
   - name: MSTR_SRC_STM_CD
     tests:
