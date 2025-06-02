@@ -4,6 +4,7 @@ models:
 
 
 - name: PMS_IS_SAC_DPL_SS_DPL_IP_TCV_FULL_CUD_V
+  description: SAC version cud
   columns:
   - name: IP_SUP_KEY
     tests:
@@ -38,6 +39,7 @@ models:
         value: 1
         row_condition: 'DEL_IN_SRC_STM_IND is not null'
 - name: PMS_IS_CDS_IP_K
+  description: IP_K key table
   columns:
   - name: IP_ID
     tests:
@@ -73,6 +75,7 @@ models:
         value: 3
         row_condition: '`SRC_STM_CD` is not null'
 - name: PMS_IS_SAC_SS_DPL_IP_TCV_FULL_CUD_V_D
+  description: Version CUD Delta
   columns:
   - name: IP_TCV_FULL_CUD_V_ID
     tests:
@@ -92,6 +95,7 @@ models:
     - not_null
 
 - name: PMS_IS_CDS_SS_DPL_IP_TCV_FULL_CUD_V
+  description: Full CUD Version table
   columns:
   - name: IP_TCV_FULL_CUD_V_ID
     tests:
@@ -110,6 +114,49 @@ models:
     tests:
       - vldfrom_gt_vldto:
           column_2: VLD_TO_TMS
+- name: PMS_IS_SAC_DPL_SS_DPL_IP_TCI_DELTA_C_I
+  description: Immutable table non persistent
+  columns:
+  - name: IP_TCI_DELTA_C_I_SUP_KEY
+    tests:
+    - not_null
+  - name: MSTR_SRC_STM_KEY
+    tests:
+    - not_null
+    - accepted_values:
+        values:
+        - TEST&DATA&KEY_1
+        - TEST&DATA&KEY_2
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 15
+        row_condition: '`MSTR_SRC_STM_KEY` is not null'
+- name: PMS_IS_CDS_SS_DPL_IP_TCI_DELTA_C_I
+  description: Immutable table
+  columns:
+  - name: IP_TCI_DELTA_C_I_ID
+    tests:
+    - unique
+    - not_null
+  - name: IP_TCI_DELTA_C_I_SUP_KEY
+    tests:
+    - not_null
+  - name: MSTR_SRC_STM_KEY
+    tests:
+    - not_null
+    - accepted_values:
+        values:
+        - TEST&DATA&KEY_1
+        - TEST&DATA&KEY_2
+    - dbt_expectations.expect_column_value_lengths_to_equal:
+        value: 15
+        row_condition: '`MSTR_SRC_STM_KEY` is not null'
+  - name: VLD_TO_TMS
+    tests:
+    - accepted_values:
+        values:
+        - '9999-12-31 00:00:00'
+
+
 
 
 
