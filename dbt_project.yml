@@ -42,6 +42,8 @@ models:
     # Applies to all files under models/example/
     example:
       +materialized: table
+  DPL:
+    tags : ['pms']
 vars:
   pm_pcs_period: '2025-04-01 00:00:00'
   pm_pcs_id: 10
